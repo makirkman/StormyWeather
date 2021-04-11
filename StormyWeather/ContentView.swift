@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @ObservedObject var storm = StormViewModel() ;
+
     var body: some View {
-        Text("Hello, world!")
+        Text("The weather at your current location is:")
+            .padding()
+
+        Text(storm.weatherSummary)
+            .padding()
+
+        Text(storm.location)
             .padding()
     }
 }
